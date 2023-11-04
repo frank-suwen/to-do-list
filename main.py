@@ -32,5 +32,12 @@ def main():
                 print("Task marked as done!")
             else:
                 print("Invalid task number.")
+        
+        elif choice == "4":
+            print("Exiting the To-Do List")
+            break
+        
+        else:
+            print("Invalid choice. Please try again.")
 
 main()
