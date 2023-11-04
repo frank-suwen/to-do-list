@@ -6,7 +6,8 @@ def main():
         print("1. Add Task")
         print("2. Show Tasks")
         print("3. Mark Task as Done")
-        print("4. Exit")
+        print("4. Delete Task")
+        print("5. Exit")
 
         choice = input("Enter your choice: ")
 
@@ -38,7 +39,23 @@ def main():
             else:
                 print("Invalid task number.")
         
-        
+        elif choice == "4":
+            print()
+            for index, task in enumerate(tasks):
+                status = "Done" if task["done"] else "Not Done"
+                print(f"{index + 1}. {task['task']} - {status}")
+
+            task_index = int(input("Enter the task number you want to remove: ")) - 1
+
+            tasks.remove(tasks[task_index])
+
+            print()
+            print("Selected task removed successfully!")
+            print()
+
+            for index, task in enumerate(tasks):
+                status = "Done" if task["done"] else "Not Done"
+                print(f"{index + 1}. {task['task']} - {status}")
         
         elif choice == "5":
             print("Exiting the To-Do List")
