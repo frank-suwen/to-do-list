@@ -10,6 +10,19 @@ def main():
 
         choice = input("Enter your choice: ")
 
+        if choice == "1":
+            print()
+            n_tasks = int(input("How many task you want to add: "))
 
+            for i in range(n_tasks):
+                task = input("Enter your task: ")
+                tasks.append({"task": task, "done": False})
+                print("Task added!")
+        
+        elif choice == "2":
+            print("\nTasks:")
+            for index, task in enumerate(tasks):
+                status = "Done" if task["done"] else "Not Done"
+                print(f"{index + 1}. {task[task]} - {status}")
 
 main()
