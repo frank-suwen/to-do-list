@@ -18,26 +18,34 @@ def main():
                 task = input("Enter your task: ")
                 tasks.append({"task": task, "done": False})
                 print("Task added!")
+                print()
         
         elif choice == "2":
+            if len(tasks) == 0:
+                print("\nNo task has been created yet!")
+                continue
             print("\nTasks:")
             for index, task in enumerate(tasks):
                 status = "Done" if task["done"] else "Not Done"
-                print(f"{index + 1}. {task[task]} - {status}")
+                print(f"{index + 1}. {task['task']} - {status}")
         
         elif choice == "3":
             task_index = int(input("Enter the task number to mark as done: ")) - 1
+            print()
             if 0 <= task_index and len(tasks):
                 tasks[task_index]["done"] = True
                 print("Task marked as done!")
             else:
                 print("Invalid task number.")
         
-        elif choice == "4":
+        
+        
+        elif choice == "5":
             print("Exiting the To-Do List")
             break
         
         else:
             print("Invalid choice. Please try again.")
 
-main()
+if __name__ == "__main__":
+    main()
