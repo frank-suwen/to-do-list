@@ -24,5 +24,13 @@ def main():
             for index, task in enumerate(tasks):
                 status = "Done" if task["done"] else "Not Done"
                 print(f"{index + 1}. {task[task]} - {status}")
+        
+        elif choice == "3":
+            task_index = int(input("Enter the task number to mark as done: ")) - 1
+            if 0 <= task_index and len(tasks):
+                tasks[task_index]["done"] = True
+                print("Task marked as done!")
+            else:
+                print("Invalid task number.")
 
 main()
